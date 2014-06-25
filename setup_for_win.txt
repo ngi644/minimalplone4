@@ -1,0 +1,7 @@
+WindowsでPloneを起動すると,ntpath.pyの85行目でエラーを出す．
+回避するために，以下のように修正する．
+
+    if isinstance(result_path, (list, tuple)):
+        result_path = result_path[0]
+    return result_drive + result_path
+    
